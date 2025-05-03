@@ -1,0 +1,45 @@
+{
+  "contracts": {
+    "Lottery": "07b2f5ea07c360ca799c29ae2fd1231108fe4bde"
+  },
+  "tests": {
+    "tests/test_lottery.py": {
+      "coverage": false,
+      "isolated": false,
+      "results": ".....",
+      "sha1": "d960ff0fab27eb11061a90d4b1815641cc813b48",
+      "txhash": [
+        "3ea4b43e62bbdbe0955c58076b749a90490dd0a2",
+        "5aac5233dde5b1df4e07e6f4c458aeee8b3c21ea"
+      ]
+    }
+  },
+  "tx": {
+    "3ea4b43e62bbdbe0955c58076b749a90490dd0a2": {
+      "Lottery": {
+        "0": [
+          [
+            0
+          ],
+          [
+            8
+          ],
+          []
+        ]
+      }
+    },
+    "5aac5233dde5b1df4e07e6f4c458aeee8b3c21ea": {
+      "Lottery": {
+        "0": [
+          [
+            5
+          ],
+          [
+            10
+          ],
+          []
+        ]
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-from brownie import Lottery, accounts, network
+from brownie import Lottery, accounts, network 
 
 def main():
     acct = accounts[1]
