@@ -1,0 +1,1 @@
+ crypto program that will take three or more players as addresses and add to a pool for the winning lottery and then pick a winner randomly. 

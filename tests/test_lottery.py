@@ -9,23 +9,28 @@ def lottery():
     contract = Lottery.deploy({"from": acct})
     return contract
 
+# tests for the pool contract 
 def test_contract_deploys(lottery):
     assert lottery.manager() == accounts[0]
 
+# testing the enter function, if a player can enter the lottery and has funds
 def test_can_enter_lottery(lottery):
     tx = lottery.enter({"from": accounts[1], "value": Wei("0.01 ether")})
     tx.wait(1)
     assert lottery.players(0) == accounts[1]
 
+# testing the enter function, if a player can enter the lottery and has no funds
 def test_rejects_insufficient_eth(lottery):
     with pytest.raises(exceptions.VirtualMachineError):
         lottery.enter({"from": accounts[2], "value": Wei("0.001 ether")})
 
+# Only the manager can pick a winner
 def test_only_manager_can_pick_winner(lottery):
     lottery.enter({"from": accounts[1], "value": Wei("0.01 ether")})
     with pytest.raises(exceptions.VirtualMachineError):
         lottery.pickWinner({"from": accounts[1]})
 
+# testing the pickWinner function, if the manager can pick a winner 
 def test_winner_receives_funds(lottery):
     player1 = accounts[1]
     player2 = accounts[2]
